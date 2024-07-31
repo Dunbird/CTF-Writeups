@@ -11,7 +11,7 @@
 ![screenshot1](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730215236.png?raw=true)
  
 The information we are looking for is the `Time Stamp` value. Just be sure to convert it into UTC format as the task requires.
-\n `2024-03-13 10:38:06`
+`2024-03-13 10:38:06`
 
 ## Task 3 *Examining the code size in a binary file can give indications about its functionality. Could you specify the byte size of the code in this binary?*
 ----
