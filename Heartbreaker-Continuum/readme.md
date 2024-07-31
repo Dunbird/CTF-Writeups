@@ -6,7 +6,7 @@
 ####Task 2 *When was the binary file originally created, according to its metadata (UTC)?*
 ----
  We can get this information from files using **Exiftool:**
-	![screenshot1]([Pasted image 20240729232635.png](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730215236.png?raw=true)
+	![screenshot1](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730215236.png?raw=true)
 	The information we are looking for is the `Time Stamp` value. Just be sure to convert it into UTC format as the task requires.
 		 `2024-03-13 10:38:06`
 
