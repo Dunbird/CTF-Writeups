@@ -93,7 +93,7 @@ MITRE ID: `T1119`
 
 We must first see where this happens in the script to find the password used. 
 
-We are looking for where the data is exfiltrated using FTP/SFTP. Here, we will see the following:
+We are looking for where the data is exfiltrated using [FTP/SFTP](https://www.redhat.com/sysadmin/ftp-vs-sftp). Here, we will see the following:
 
 ![screenshot8](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730174457.png?raw=true)
  
