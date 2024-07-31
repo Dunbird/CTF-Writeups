@@ -53,7 +53,7 @@ From looking at the obfuscated script, we can see that it is clearly encoded wit
 
 To do this, we should begin to deobfuscate the previously found script. 
 
-Taking a quick look at it, we can see that it clearly reverses Base64. 
+Taking a quick look at it, we can see that it is clearly reversed Base64. 
 We can easily deobfuscate this using [CyberChef](https://gchq.github.io/CyberChef/) 
 
 ![screenshot5](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730203353.png?raw=true)
