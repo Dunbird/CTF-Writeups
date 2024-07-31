@@ -11,7 +11,7 @@
 ![screenshot1](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730215236.png?raw=true)
  
 The information we are looking for is the `Time Stamp` value. Just be sure to convert it into UTC format as the task requires.
-`2024-03-13 10:38:06`
+\n `2024-03-13 10:38:06`
 
 ## Task 3 *Examining the code size in a binary file can give indications about its functionality. Could you specify the byte size of the code in this binary?*
 ----
@@ -40,7 +40,7 @@ Now, we need to find the hexadecimal offset of this. An easy way to do this is t
 
 ![screeshot4](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730160155.png?raw=true)
   
-	`Offset: 2C74` 
+`Offset: 2C74` 
 	 
 
 ## Task 6 *The threat actor concealed the plaintext script within the binary. Can you provide the encoding method used for this obfuscation?*
@@ -60,7 +60,7 @@ Looking at the result, we can investigate the cmdlet used to download the file. 
 
 ![screenshot6](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730164457.png?raw=true)
 
-	`Invoke-WebRequest` 
+`Invoke-WebRequest` 
 
 ## Task 8 *Could you identify any possible network-related Indicators of Compromise (IoCs) after examining the code? Separate IPs by commas in ascending order.*
 ----
