@@ -6,7 +6,9 @@
 ## Task 2 *When was the binary file originally created, according to its metadata (UTC)?*
 ----
  We can get this information from files using **Exiftool:**
-	![screenshot1](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730215236.png?raw=true)
+ 
+![screenshot1](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730215236.png?raw=true)
+ 
 	The information we are looking for is the `Time Stamp` value. Just be sure to convert it into UTC format as the task requires.
 		 `2024-03-13 10:38:06`
 
@@ -21,7 +23,9 @@ We can then make a simple Python script using `pefile` to find the value of the 
 ----
 Digging into the file will be our best course of action.
 After looking at the strings found within the file, we come across the file name 
-	![screenshot2](Pasted image 20240730155256.png)
+
+![screenshot2](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730155256.png?raw=true)
+ 
 		`newILY.ps1` 
 
 ## Task 5 *Specify the hexadecimal offset where the obfuscated code of the identified original file begins in the binary.*
@@ -29,10 +33,13 @@ After looking at the strings found within the file, we come across the file name
 I approached this using [Autopsy](https://www.autopsy.com/) to have a clear view of the text from the file. 
 
 From there, we see what is clearly obfuscated script 
-	 ![screenshot3](Pasted image 20240730155836.png)
+
+![screenshot3](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730155836.png?raw=true)
 
 Now, we need to find the hexadecimal offset of this. An easy way to do this is to use `PE-Bear` and search for this text since it provides the offset of where it is found. 
-	 ![screeshot4](Pasted image 20240730160155.png)
+
+![screeshot4](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730160155.png?raw=true)
+  
 	 Offset: `2C74` 
 	 
 
@@ -46,11 +53,14 @@ To do this, we should begin to deobfuscate the previously found script.
 
 Taking a quick look at it, we can see that it clearly reverses Base64. 
 We can easily deobfuscate this using [CyberChef](https://gchq.github.io/CyberChef/) 
-	![screenshot5](Pasted image 20240730203353.png)
+
+![screenshot5](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730203353.png?raw=true)
 
 Looking at the result, we can investigate the cmdlet used to download the file. Luckily, it is pretty straightforward
-	![screenshot6](Pasted image 20240730164457.png)
-	 `Invoke-WebRequest` 
+
+![screenshot6](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730164457.png?raw=true)
+
+  `Invoke-WebRequest` 
 
 ## Task 8 *Could you identify any possible network-related Indicators of Compromise (IoCs) after examining the code? Separate IPs by commas in ascending order.*
 ----
@@ -70,7 +80,9 @@ From there we can find the value of it and get the directory being used
 To find this, we need to understand how the script collects data. 
 
 After looking through it, you'll come across the following: 
-	 ![screenshot7](Pasted image 20240730173501.png)
+
+![screenshot7](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730173501.png?raw=true)
+  
 Here, you'll see how it utilizes file extensions to gather user data. 
 According to MITRE ATT&CK, this would fall under `Automated Collection` 
 	`T1119` 
@@ -80,5 +92,7 @@ According to MITRE ATT&CK, this would fall under `Automated Collection`
 We must first see where this happens in the script to find the password used. 
 
 We are looking for where the data is exfiltrated using FTP/SFTP. Here, we will see the following:
-	![screenshot8](Pasted image 20240730174457.png)
+
+![screenshot8](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730174457.png?raw=true)
+ 
 	 Giving us the password:  `M8&C!i6KkmGL1-#` 
