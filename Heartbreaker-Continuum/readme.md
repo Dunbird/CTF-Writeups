@@ -86,7 +86,7 @@ After looking through it, you'll come across the following:
 ![screenshot7](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730173501.png?raw=true)
   
 Here, you'll see how it utilizes file extensions to gather user data. 
-According to MITRE ATT&CK, this would fall under `Automated Collection` 
+According to [MITRE ATT&CK](https://attack.mitre.org/), this would fall under `Automated Collection` 
 MITRE ID: `T1119` 
 
 ## Task 11 *What is the password utilized to exfiltrate the collected files through the file transfer program within the binary?*
