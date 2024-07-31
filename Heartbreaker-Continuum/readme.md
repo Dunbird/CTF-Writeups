@@ -58,7 +58,7 @@ We can easily deobfuscate this using [CyberChef](https://gchq.github.io/CyberChe
 
 ![screenshot5](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730203353.png?raw=true)
 
-Looking at the result, we can investigate the cmdlet used to download the file. Luckily, it is pretty straightforward
+Looking at the [results](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/deobfScript.txt), we can investigate the cmdlet used to download the file. Luckily, it is pretty straightforward
 
 ![screenshot6](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730164457.png?raw=true)
 
