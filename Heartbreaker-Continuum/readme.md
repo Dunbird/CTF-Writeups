@@ -4,6 +4,8 @@
 
  Simply unzip the provided zip file and run:
 	 `sha256sum Superstar_MemberCard.tiff.exe`
+
+
 sha256: `12daa34111bb54b3dcbad42305663e44e7e6c3842f015cccbbe6564d9dfd3ea3`
   
 ## Task 2 *When was the binary file originally created, according to its metadata (UTC)?*
@@ -13,6 +15,8 @@ sha256: `12daa34111bb54b3dcbad42305663e44e7e6c3842f015cccbbe6564d9dfd3ea3`
 ![screenshot1](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730215236.png?raw=true)
  
 The information we are looking for is the `Time Stamp` value. Just be sure to convert it into UTC format as the task requires.
+
+
 Timestamp: `2024-03-13 10:38:06`
 
 ## Task 3 *Examining the code size in a binary file can give indications about its functionality. Could you specify the byte size of the code in this binary?*
@@ -20,6 +24,8 @@ Timestamp: `2024-03-13 10:38:06`
 We can do this by finding what section of the binary is used to store the code. A bit of simple research shows us that it is stored in the `.text` section of the binary. 
 
 We can then make a simple Python script using `pefile` to find the value of the byte size of that section.  *We are looking for the raw size of that section.*
+
+
 Bytes: `38400`
 
 ## Task 4 *It appears that the binary may have undergone a file conversion process. Could you determine its original filename?*
@@ -28,6 +34,8 @@ Digging into the file will be our best course of action.
 After looking at the strings found within the file, we come across the file name 
 
 ![screenshot2](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730155256.png?raw=true)
+
+
 Filename: `newILY.ps1`
 
 ## Task 5 *Specify the hexadecimal offset where the obfuscated code of the identified original file begins in the binary.*
@@ -67,6 +75,8 @@ cmdlet: `Invoke-WebRequest`
 ## Task 8 *Could you identify any possible network-related Indicators of Compromise (IoCs) after examining the code? Separate IPs by commas in ascending order.*
 
 This is pretty simple. Just have to look through the newly found script and find the IPs used to compromise. 
+
+
 IPs: `35.169.66.138, 44.206.187.144`
 
 ## Task 9 *The binary created a staging directory. Can you specify the location of this directory where the harvested files are stored?*
@@ -96,5 +106,11 @@ We must first see where this happens in the script to find the password used.
 We are looking for where the data is exfiltrated using [FTP/SFTP](https://www.redhat.com/sysadmin/ftp-vs-sftp). Here, we will see the following:
 
 ![screenshot8](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730174457.png?raw=true)
- 
+
+
 Password:`M8&C!i6KkmGL1-#`
+
+----
+**Pretty simple and straightforward overall**
+
+
