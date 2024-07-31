@@ -10,7 +10,7 @@
 ![screenshot1](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730215236.png?raw=true)
  
 	The information we are looking for is the `Time Stamp` value. Just be sure to convert it into UTC format as the task requires.
-		 `2024-03-13 10:38:06`
+`2024-03-13 10:38:06`
 
 ## Task 3 *Examining the code size in a binary file can give indications about its functionality. Could you specify the byte size of the code in this binary?*
 ----
@@ -26,7 +26,7 @@ After looking at the strings found within the file, we come across the file name
 
 ![screenshot2](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730155256.png?raw=true)
  
-		**newILY.ps1**
+**newILY.ps1**
 
 ## Task 5 *Specify the hexadecimal offset where the obfuscated code of the identified original file begins in the binary.*
 ----
@@ -40,7 +40,7 @@ Now, we need to find the hexadecimal offset of this. An easy way to do this is t
 
 ![screeshot4](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730160155.png?raw=true)
   
-	 Offset: **2C74** 
+Offset: **2C74** 
 	 
 
 ## Task 6 *The threat actor concealed the plaintext script within the binary. Can you provide the encoding method used for this obfuscation?*
@@ -95,4 +95,4 @@ We are looking for where the data is exfiltrated using FTP/SFTP. Here, we will s
 
 ![screenshot8](https://github.com/Dunbird/CTF-Writeups/blob/main/Heartbreaker-Continuum/Pasted%20image%2020240730174457.png?raw=true)
  
-	 Giving us the password:  **M8&C!i6KkmGL1-#** 
+Giving us the password:  **M8&C!i6KkmGL1-#** 
