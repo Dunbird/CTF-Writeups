@@ -1,10 +1,11 @@
+# Crymem Write Up
 ## Files Provided
 ##### **aes_sample.c**
 This file is an encryption script. From analyzing it, what I can conclude is that it takes the file holding the flag > reads it > loads the contents into memory > deletes the contents > uses an encryption key, and IV >  encrypts the contents > then prints the encrypted data and the IV 
 
 ##### **memdump.raw** 
 This is a capture of the memory where the flag was loaded. However, after trying to load it into volatility, it seems we cannot work with it. 
-Loading it into volatility and FTK Imager shows strings are stored within it.
+Loading it into [Volatility](https://github.com/volatilityfoundation/volatility) and [FTK Imager](https://www.exterro.com/digital-forensics-software/ftk-imager) shows strings are stored within it.
 
 
 ### Getting Key information 
@@ -17,10 +18,10 @@ Returning to the `aes_sample.c` file, we can look for both the file containing t
 We are looking for **IVVALUE** and **ENCFLAG**, as we know they were printed out by the encryption script
 
 
-![[Pasted image 20240804181508.png]]
+![Pasted image 20240804181508.png](https://github.com/Dunbird/CTF-Writeups/blob/main/crymem/Pasted%20image%2020240804181508.png)
 
 
-Doing this will provide us with:
+Providing us with:
 
 
 **IVVALUE**: `0ac516e1bc21a36e68932e05ff8aa480`
@@ -41,18 +42,18 @@ So we have to use tools such as [**Binwalk**](https://github.com/ReFirmLabs/binw
 Using binwalker did not give me any useful file to find the key
 
 
-![[Pasted image 20240804185247.png]]
+![Pasted image 20240804185247.png](https://github.com/Dunbird/CTF-Writeups/blob/main/crymem/Pasted%20image%2020240804185247.png)
 
 ###### Bulk Extractor
 Running `bulk_extractor -o Desktop/crewCTF/crymem/dist/bulkextractor Desktop/crewCTF/crymem/dist/memdump.raw` provided me with many files.
 
 
-![[Pasted image 20240804185631.png]]
+![Pasted image 20240804185631.png](https://github.com/Dunbird/CTF-Writeups/blob/main/crymem/Pasted%20image%2020240804185631.png)
 
 Amongst those files, we find our **aes_keys.txt** file!
 
 
-![[Pasted image 20240804185759.png]]
+![Pasted image 20240804185759.png](https://github.com/Dunbird/CTF-Writeups/blob/main/crymem/Pasted%20image%2020240804185759.png)
 
 ----
 Now, we have everything we need to use a service such as Cyberchef to decrypt the flag.
@@ -68,5 +69,5 @@ Now, we have everything we need to use a service such as Cyberchef to decrypt th
 **Decrypted Flag**: `crew{M3m0ry_f0r3N_is_mysterious_@_crypt0_Challs}`
 
 
-![[Pasted image 20240804190140.png]]
+![Pasted image 20240804190140.png](https://github.com/Dunbird/CTF-Writeups/blob/main/crymem/Pasted%20image%2020240804190140.png)
 
