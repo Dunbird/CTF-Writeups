@@ -1,7 +1,7 @@
 # TrueSecrets Writeup
-##### CHALLENGE DESCRIPTION
+### Challenge Description
 *Our cybercrime unit has been investigating a well-known APT group for several months. The group has been responsible for several high-profile attacks on corporate organizations. However, what is interesting about that case, is that they have developed a custom command & control server of their own. Fortunately, our unit was able to raid the home of the leader of the APT group and take a memory capture of his computer while it was still powered on. Analyze the capture to try to find the source code of the server*
-#### Files
+### Files
 **TrueSecrets.raw** - Memory dump of [command and control server](https://sysdig.com/learn-cloud-native/what-is-a-command-and-control-server/#:~:text=A%20Command%2Dand%2DControl%20server%20is%20a%20computer%20or%20set,or%20compromising%20attacker%20target%20systems.) 
 
 ----
