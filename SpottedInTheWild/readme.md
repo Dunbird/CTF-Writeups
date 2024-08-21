@@ -81,4 +81,4 @@ Opening the script location using Autopsy will show us an obfuscated script. A q
 Reading through the script will provide us with the full path of the file storing the data collected.
 
 
-![Task9 2.png](https://github.com/Dunbird/CTF-Writeups/blob/main/SpottedInTheWild/Task9%202.png)
+![Task9 2.png](https://github.com/Dunbird/CTF-Writeups/blob/main/SpottedInTheWild/Task92.png)
