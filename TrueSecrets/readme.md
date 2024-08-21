@@ -54,7 +54,7 @@ Now that we have the container file and the password, we can mount it to our sys
 Investigating the `AgentServer.cs` file shows us that this is the source code for the command and control server. Within this source code, we see the encryption method used, along with the encryption key and IV.
 
 
-![encryption.png](https://github.com/Dunbird/CTF-Writeups/blob/main/TrueSecrets/encryption.png)
+![encryption.png](https://github.com/Dunbird/CTF-Writeups/blob/main/TrueSecrets/newencryption.png)
 
 The form of encryption is through DES into base64 with the following key and IV:
 ```
