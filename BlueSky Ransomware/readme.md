@@ -9,7 +9,7 @@ From looking at the HTTP traffic, you can see that there are PowerShell files wi
 
 ## Task 2 *During the investigation, it's essential to determine the account targeted by the attacker. Can you identify the targeted account username?*
 
-We can find this information by running the network log file through **NetworkMiner** and looking at the "Credentials" tab.
+We can find this information by running the network log file through [NetworkMiner](https://www.netresec.com/?page=NetworkMiner) and looking at the "Credentials" tab.
 
 
 ![[image2.png]](https://github.com/Dunbird/CTF-Writeups/blob/main/BlueSky%20Ransomware/image2.png)
@@ -19,7 +19,7 @@ Showing the Username: *Sa*
 
 ## Task 3 *We need to determine if the attacker succeeded in gaining access. Can you provide the correct password discovered by the attacker?*
 
-Similarly to Task 2, we can find this information on **NetworkMiner** and by looking at the "Credentials Tab."
+Similarly to Task 2, we can find this information on [NetworkMiner](https://www.netresec.com/?page=NetworkMiner) and by looking at the "Credentials Tab."
 
 
 ![[image3.png]](https://github.com/Dunbird/CTF-Writeups/blob/main/BlueSky%20Ransomware/image3.png)
