@@ -8,11 +8,13 @@
 </head>
 <body>
   <div class="terminal">
-    <h1>{{ page.title }}</h1>
-    <p>Welcome to the terminal-style portfolio!</p>
-    <div id="terminal-output"></div>
+    <div id="terminal-output">
+      <div>Welcome to Dunbird's Terminal Portfolio!</div>
+      <div>Type <strong>help</strong> to see a list of available commands.</div>
+    </div>
     <div id="command-line">
-      <input type="text" id="command-input" placeholder="Type a command...">
+      <span>&gt;</span>
+      <input type="text" id="command-input" placeholder="Type a command..." autofocus>
     </div>
   </div>
   <script src="{{ '/assets/scripts.js' | relative_url }}"></script>

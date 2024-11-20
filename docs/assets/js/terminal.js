@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     term.writeln('Welcome to my portfolio! Type "help" for a list of commands.');
     term.prompt = 'user@portfolio:~$ ';
 
-    // Handle input from the user
+    // Handles input from the user
     term.onData(e => {
         if (e === '\r') {
             return;
         }
 
-        // Process command
+        // Process commands
         if (e === 'help\r') {
             term.writeln('Available commands:');
             term.writeln('about  - Learn more about me');
